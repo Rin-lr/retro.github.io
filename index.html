@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
+  <body>
+    <div id="header">
+      <h1 id="cart" >Cart = 0</h1>
+    </div>
+    <div id="shop"></div>
+
+    <script>
+      var items = [
+          {
+              "id": 0,
+              "title": "Hat",
+              "imageURL": "https://i.imgur.com/HgIzJ0O.png",
+              "description": "A retro hat from 1972 wore by Jim Morrison. Size L",
+              "price": 25.99
+          },
+          {
+              "id": 1,
+              "title": "Guitar",
+              "imageURL": "https://i.imgur.com/1pc347r.png",
+              "description": "Used by Jimi Hendrix in Spain tour 1969. Left-handed.",
+              "price": 7560
+          },
+          {
+              "id": 2,
+              "title": "Headset",
+              "imageURL": "https://i.imgur.com/BU1u53U.png",
+              "description": "Mono/Stereo sound.",
+              "price": 129.99
+          },
+          {
+              "id": 3,
+              "title": "Backpack",
+              "imageURL": "https://i.imgur.com/WOGQ3ll.png",
+              "description": "25 liters travel fake-leather",
+              "price": 59.99
+          },
+          {
+              "id": 4,
+              "title": "Glasses",
+              "imageURL": "https://i.imgur.com/KQssRzO.png",
+              "description": "-3.75 left eye -4.25 right eye. Can you buy glasses like this somewhere else? You cannot.",
+              "price": 158.45
+          },
+          {
+              "id": 5,
+              "title": "Camera",
+              "imageURL": "https://i.imgur.com/hifcDsd.png",
+              "description": "Works only with Kodak Pro-289l films",
+              "price": 46.15
+          },
+          {
+              "id": 6,
+              "title": "Skate",
+              "imageURL": "https://i.imgur.com/KiZi7HQ.png",
+              "description": "Tony Hawks first skate.",
+              "price": 2500
+          },
+          {
+              "id": 7,
+              "title": "Shirt",
+              "imageURL": "https://i.imgur.com/4OZIWFV.png",
+              "description": "Wore by Elvis Presley in Acapulco film.",
+              "price": 756
+          },
+          {
+              "id": 8,
+              "title": "Sneakers",
+              "imageURL": "https://i.imgur.com/4GtCkkJ.png",
+              "description": "Used by Bugs Bunny in Space-Jam",
+              "price": 259.30
+          },
+          {
+              "id": 9,
+              "title": "Shoes",
+              "imageURL": "https://i.imgur.com/uRXDvwK.png",
+              "description": "Only one. Right foot.",
+              "price": 79.99
+          },
+          {
+              "id": 10,
+              "title": "Red Hat",
+              "imageURL": "https://i.imgur.com/qvwxXYY.png",
+              "description": "Outlander's costume. Unique piece!",
+              "price": 250
+          },
+          {
+              "id": 11,
+              "title": "Brown Beanie",
+              "imageURL": "https://i.imgur.com/zZAtqkD.png",
+              "description": "Want to be cool but look like idiot? Buy this hat.",
+              "price": 829.15
+          },
+          {
+              "id": 12,
+              "title": "Blue Jeans",
+              "imageURL": "https://i.imgur.com/PMFkkjS.png",
+              "description": "Blue jeans, white shirt. Walked into the room you know you made my eyes burn",
+              "price": 150.90
+          },
+          {
+              "id": 13,
+              "title": "Brown Pants",
+              "imageURL": "https://i.imgur.com/PmCMb4p.png",
+              "description": "They are so ugly that we give them out for almost nothing",
+              "price": 1.99
+          },
+          {
+              "id": 14,
+              "title": "Radio",
+              "imageURL": "https://i.imgur.com/Xd1YRFS.png",
+              "description": "AM only. Volumne knob broken but works at max volume",
+              "price": 5.99
+          }
+      ];
+
+      var cart = [];
+
+      var totalPrice = 0;
+
+      for(var i = 0; i < items.length; i++){
+        let item = items[i];
+
+        var cart = document.createElement('h1');
+          cart.classList.add('cart');
+
+        var header = document.createElement('div');
+          header.classList.add('header');
+
+        var blok = document.createElement('div');
+          blok.classList.add('blok');
+
+        var content = document.createElement("div");
+          content.classList.add("content");
+
+        var imgHTML = document.createElement("img");
+          imgHTML.src = items[i].imageURL;
+          content.appendChild(imgHTML);
+
+        var titleHTML = document.createElement("p");
+          titleHTML.innerHTML = items[i].title;
+          content.appendChild(titleHTML);
+
+        var infoHTML = document.createElement('p');
+          infoHTML.innerHTML = items[i].description;
+          content.appendChild(infoHTML);
+
+        var priceHTML = document.createElement("p");
+          priceHTML.innerHTML = items[i].price;
+          content.appendChild(priceHTML);
+
+      var addbtn = document.createElement("button");
+        addbtn.innerHTML = "Add";
+        addbtn.addEventListener("click", function() {
+
+          console.log(item.price);
+          totalPrice = totalPrice + item.price;
+          document.getElementById('cart').innerHTML = 'Cart = ' + totalPrice.toFixed(2);
+          console.log('Total = ' + totalPrice.toFixed(2));
+
+            console.log(cart);
+      });
+      content.appendChild(addbtn);
+
+      var removebtn = document.createElement("button");
+      removebtn.innerHTML = "Remove";
+      removebtn.addEventListener("click", function() {
+
+        totalPrice = totalPrice - item.price;
+        document.getElementById('cart').innerHTML = 'Cart = ' + totalPrice.toFixed(2);
+        console.log('Total = ' + totalPrice.toFixed(2));
+      });
+      content.appendChild(removebtn);
+
+      shop.appendChild(blok);
+      blok.appendChild(content);
+      }
+      console.log("Have a good time!");
+    </script>
+  </body>
+</html>

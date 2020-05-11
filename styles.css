@@ -1,0 +1,44 @@
+body {
+  background-color: grey;
+}
+.items {
+  background-color: black;
+	margin:auto;
+  color: white;
+	padding: 20px;
+	border:0%;
+	moz-box-shadow: 3px 3px 5px #777;
+	webkit-box-shadow: 3px 3px 5px #777;
+	box-shadow: 3px 3px 5px #777;
+	width: 10%;
+	height: auto;
+  display: flex;
+}
+img {
+  width: 50px;
+  height: auto;
+
+}
+#shop {
+  display: flex;
+  flex-wrap: wrap;
+}
+.blok {
+  padding: 15px;
+  align-self: flex-start;
+}
+.content {
+  padding: 10px;
+  border: black solid;
+  background-color: white;
+  max-width: 120px;
+}
+#header {
+  background-color: black;
+  height: 50px;
+  padding: 25px;
+}
+#cart {
+  color: white;
+  margin-top: 8px;;
+}
